@@ -13,8 +13,7 @@ jobs:
     steps:
       - checkout
       - jq/install
-      - run: sudo apt-get update && sudo apt-get install -y cowsay
-      - run: cowsay Continuous Integration Rocks!
+      - run: sudo apt-get update && sudo apt-get install curl
       - run:
           name: Authenticate With DSV Vault 
           command: "export AUTH_REQUEST=$(curl --request POST --header 'Content-Type: application/x-www-form-urlencoded' --data '{ \"grant_type\": \"client_credentials\", \"client_id\": \"'$CLIENT_ID'\", \"client_secret\": \"'$CLIENT_SECRET'\"}' https://grregg.secretsvaultcloud.com/v1/token)" 
