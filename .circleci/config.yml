@@ -18,7 +18,7 @@ jobs:
           name: Authenticate With DSV Vault 
           command: | 
             DSV_URL = 'https://grregg.secretsvaultcloud.com/v1/token'
-            echo $DSV_URL
+            -echo $DSV_URL
             export AUTH_REQUEST=$(curl --request POST --header 'Content-Type: application/x-www-form-urlencoded' --data '{ \"grant_type\": \"client_credentials\", \"client_id\": \"'$client_id'\", \"client_secret\": \"'$client_secret'\"}' https://grregg.secretsvaultcloud.com/v1/token) 
             -echo "Authentication successful, grabbing Bearer Token"
             -export BEARER_TOKEN=$(echo $AUTH_REQUEST | jq -r '.accessToken')
