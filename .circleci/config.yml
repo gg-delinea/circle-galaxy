@@ -26,3 +26,4 @@ jobs:
             export BEARER_TOKEN=$(echo $AUTH_REQUEST | jq -r '.accessToken')
             echo "$BEARER_TOKEN"
             echo "this should be the end of the code"
+            echo "test"
